@@ -179,14 +179,14 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children, activeTab, onTabCha
               {/* Breadcrumbs */}
               <nav className="flex items-center space-x-2 space-x-reverse text-sm">
                 {breadcrumbs[activeTab as keyof typeof breadcrumbs]?.map((crumb, index, array) => (
-                  <React.Fragment key={crumb}>
+                  <div key={crumb} className="flex items-center space-x-2 space-x-reverse">
                     <span className={index === array.length - 1 ? 'text-gray-900 font-medium' : 'text-gray-500'}>
                       {crumb}
                     </span>
                     {index < array.length - 1 && (
                       <ChevronLeft className="w-4 h-4 text-gray-400 rotate-180" />
                     )}
-                  </React.Fragment>
+                  </div>
                 ))}
               </nav>
 
